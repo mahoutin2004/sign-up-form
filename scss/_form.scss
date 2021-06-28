@@ -1,0 +1,81 @@
+section.form-section {
+  .form-top {
+    width: 100%;
+    padding: 0.8em 0;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    background-color: $accent;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    border-radius: 5px;
+    background-color: white;
+
+    input {
+      width: 84%;
+      height: 50px;
+      margin: 0.5em 0;
+      border: 1px 5px solid gray;
+    }
+
+    input:focus {
+      transition: all 200ms;
+      border: 1px 5px solid $primary1;
+    }
+
+    input[type="submit"] {
+      width: 90%;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      background-color: $primary2;
+    }
+
+    p {
+      color: $neutral2;
+      font-size: 0.8em;
+      text-align: center;
+      padding: 1em;
+
+      span {
+        a {
+          color: $primary1;
+          font-weight: 700;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1199px) {
+  section.header-section,
+  section.form-section {
+    width: 536px;
+    margin: auto;
+  }
+
+  section.form-section {
+    form {
+      input {
+        margin: 1em 0;
+      }
+    }
+  }
+
+  section.header-section {
+    margin-bottom: 3em;
+  }
+}
