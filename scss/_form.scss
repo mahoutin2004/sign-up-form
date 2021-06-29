@@ -22,18 +22,20 @@ section.form-section {
     background-color: white;
 
     input {
-      width: 84%;
+      width: 90%;
       height: 50px;
+      padding: 0 1em;
       margin: 0.5em 0;
-      border: 1px 5px solid gray;
+      border: 1px solid $neutral2;
+      border-radius: 5px;
     }
 
-    input:focus {
+    input:not([type="submit"]):focus {
       transition: all 200ms;
-      border: 1px 5px solid $primary1;
+      border: 1px solid $neutral1;
     }
 
-    input[type="submit"] {
+    input[type="button"] {
       width: 90%;
       border: none;
       border-radius: 5px;
@@ -78,4 +80,20 @@ section.form-section {
   section.header-section {
     margin-bottom: 3em;
   }
+}
+
+input[type="button"],
+a {
+  cursor: pointer;
+}
+
+.input-error {
+  background-image: url("../images/icon-error.svg");
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  border: 2px solid $primary1 !important;
+}
+
+.div {
+  width: 85%;
 }

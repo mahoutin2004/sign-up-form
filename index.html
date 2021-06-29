@@ -37,15 +37,23 @@
           <span>Try it free 7 days</span> then $20/mo. thereafter
         </div>
         <form>
-          <input type="text" id="first-name" placeholder="First Name" />
+          <div class="div first-name">
+            <input type="text" id="first-name" placeholder="First Name" />
+          </div>
 
-          <input type="text" id="last-name" placeholder="Last Name" />
+          <div class="div last-name">
+            <input type="text" id="last-name" placeholder="Last Name" />
+          </div>
 
-          <input type="email" id="email" placeholder="Email Address" />
+          <div class="div email">
+            <input type="email" id="email" placeholder="Email Address" />
+          </div>
 
-          <input type="password" id="password" placeholder="Password" />
+          <div class="div password">
+            <input type="password" id="password" placeholder="Password" />
+          </div>
 
-          <input type="submit" value="Claim your free trial" />
+          <input type="button" id="submit" value="Claim your free trial" />
           <p>
             By clicking the button, you are agreeing to our
             <span><a href="#">Terms and Services</a></span>
@@ -54,14 +62,35 @@
       </section>
     </main>
 
-    <footer>
-      <p>
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by
-        <a href="https://github.com/mahoutin2004">Onel AHOUMENOU</a>.
-      </p>
-    </footer>
+    <script>
+      const submit = document.getElementById("submit");
+      const inputs = Array.from(document.getElementsByTagName("input"));
+
+      inputs.forEach(myFunction);
+
+      function myFunction(item, index, arr) {
+        submit.addEventListener("click", function (e) {
+          if (arr[index].id !== "submit" && arr[index].value == "") {
+            arr[index].classList.add("input-error");
+
+            const errorDiv = document.createElement("div");
+            errorDiv.innerHTML = "This field can't be empty!";
+            errorDiv.setAttribute(
+              "style",
+              "color: hsl(0, 100%, 74%); text-align: right; font-size: 0.8em; font-weight: 700;"
+            );
+            arr[index].parentNode.appendChild(errorDiv);
+          }
+        });
+
+        arr[index].addEventListener("focus", function (e) {
+          arr[index].classList.remove("input-error");
+
+          if (arr[index].parentNode.lastChild.tagName === "DIV") {
+            arr[index].parentNode.removeChild(arr[index].parentNode.lastChild);
+          }
+        });
+      }
+    </script>
   </body>
 </html>

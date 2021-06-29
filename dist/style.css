@@ -104,19 +104,21 @@ section.form-section form {
 }
 
 section.form-section form input {
-  width: 84%;
+  width: 90%;
   height: 50px;
+  padding: 0 1em;
   margin: 0.5em 0;
-  border: 1px 5px solid gray;
+  border: 1px solid #b9b6d3;
+  border-radius: 5px;
 }
 
-section.form-section form input:focus {
+section.form-section form input:not([type="submit"]):focus {
   -webkit-transition: all 200ms;
   transition: all 200ms;
-  border: 1px 5px solid #ff7a7a;
+  border: 1px solid #3e3c49;
 }
 
-section.form-section form input[type="submit"] {
+section.form-section form input[type="button"] {
   width: 90%;
   border: none;
   border-radius: 5px;
@@ -151,5 +153,21 @@ section.form-section form p span a {
   section.header-section {
     margin-bottom: 3em;
   }
+}
+
+input[type="button"],
+a {
+  cursor: pointer;
+}
+
+.input-error {
+  background-image: url("../images/icon-error.svg");
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  border: 2px solid #ff7a7a !important;
+}
+
+.div {
+  width: 85%;
 }
 /*# sourceMappingURL=style.css.map */
